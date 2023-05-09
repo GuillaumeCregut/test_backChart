@@ -10,10 +10,11 @@ router.get('/bar',async (req,res)=>{
 })
 
 router.get('/pie',async(req,res)=>{
-    const labels=['essai 1','essai 2', 'essai 3'];
-    const datas=[150,300,252];
+    const labels=datas.map((data)=>data.name);
+    const dataContent=datas.map((data)=>data.value);
+   // const datas=[150,300,252,42];
     try{
-        const img= await createPie(400,400,labels, datas,'./example2.png');
+        const img= await createPie(400,400,labels, dataContent,'./example3.png');
     }
     catch(err){
         console.log(err);
