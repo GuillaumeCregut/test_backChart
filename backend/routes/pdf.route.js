@@ -51,6 +51,7 @@ catch (err){
 
 
 router.get('/',async(req,res)=>{
+   res.type('application/pdf')
     createPDF(res);
 })
 
